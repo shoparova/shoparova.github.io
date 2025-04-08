@@ -13,7 +13,7 @@
     }
     header {
       text-align: center;
-      padding: 50px 20px; /* Increased padding for more space */
+      padding: 50px 20px;
       background-color: #000;
       color: white;
     }
@@ -22,9 +22,48 @@
       font-weight: bold;
       margin: 0;
     }
+    nav {
+      text-align: center;
+      background-color: #333;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #575757;
+    }
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       padding: 20px;
     }
@@ -36,10 +75,14 @@
       font-family: sans-serif;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .product-card img {
       width: 100%;
       border-radius: 12px;
+      margin-bottom: 10px;
     }
     .product-card a {
       display: inline-block;
@@ -49,21 +92,21 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 10px;
+      margin-top: auto;
     }
     @media screen and (max-width: 1200px) {
       .product-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+        grid-template-columns: repeat(3, 1fr);
       }
     }
     @media screen and (max-width: 800px) {
       .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+        grid-template-columns: repeat(2, 1fr);
       }
     }
     @media screen and (max-width: 500px) {
       .product-grid {
-        grid-template-columns: 1fr; /* 1 column on mobile screens */
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -71,9 +114,38 @@
 <body>
 
   <header>
-    <h1>AROVA</h1> <!-- Changed to text "AROVA" -->
+    <h1>AROVA</h1>
   </header>
 
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="dropdown">
+      <a href="#">Men</a>
+      <div class="dropdown-content">
+        <a href="#">Shoes</a>
+        <a href="#">Clothing</a>
+        <a href="#">Accessories</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Women</a>
+      <div class="dropdown-content">
+        <a href="#">Shoes</a>
+        <a href="#">Clothing</a>
+        <a href="#">Accessories</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Kids</a>
+      <div class="dropdown-content">
+        <a href="#">Shoes</a>
+        <a href="#">Clothing</a>
+        <a href="#">Accessories</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Products Section -->
   <div class="product-grid">
     <div class="product-card">
       <img src="https://m.media-amazon.com/images/I/71axOQHBUhL._SY741_.jpg" alt="Product 1">
