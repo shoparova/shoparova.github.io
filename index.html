@@ -1,55 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AROVA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AROVA - Shop the Latest Fashion</title>
   <style>
     body {
-      margin: 0;
       font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: white;
+    }
+    header img {
+      width: 150px;
+      border-radius: 10px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      gap: 20px;
+      padding: 20px;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      font-family: sans-serif;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .product-card a {
+      display: inline-block;
       background: #000;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
     }
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
+    @media screen and (max-width: 1200px) {
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+      }
     }
-    p {
-      font-size: 1.2rem;
-      color: #ccc;
+    @media screen and (max-width: 800px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .product-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile screens */
+      }
     }
   </style>
 </head>
 <body>
-  <h1>AROVA</h1>
-  <p>Shop the latest styles in fashion.</p>
+
+  <header>
+    <img src="https://yourlogo.com/aroza_logo.png" alt="AROVA Logo">
+  </header>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71axOQHBUhL._SY741_.jpg" alt="Product 1">
+      <a href="https://amzn.to/3YnnuTD" target="_blank">Shop Now</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/51cNMNimNGL._SY741_.jpg" alt="Product 2">
+      <a href="https://amzn.to/4i43A7i" target="_blank">Shop Now</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/51-pLhPHoBL._SY741_.jpg" alt="Product 3">
+      <a href="https://amzn.to/3R5uFMt" target="_blank">Shop Now</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61Cn-GwBmYL._SY741_.jpg" alt="Product 4">
+      <a href="https://amzn.to/4ckejZU" target="_blank">Shop Now</a>
+    </div>
+  </div>
+
 </body>
 </html>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 20px;">
-  <div style="border:1px solid #ddd; border-radius:16px; padding:16px; text-align:center; font-family:sans-serif; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <img src="https://m.media-amazon.com/images/I/71axOQHBUhL._SY741_.jpg" alt="Product 1" style="width:100%; border-radius:12px;">
-    <a href="https://amzn.to/3YnnuTD" target="_blank" style="display:inline-block; background:#000; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top: 10px;">Shop Now</a>
-  </div>
-
-  <div style="border:1px solid #ddd; border-radius:16px; padding:16px; text-align:center; font-family:sans-serif; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <img src="https://m.media-amazon.com/images/I/51cNMNimNGL._SY741_.jpg" alt="Product 2" style="width:100%; border-radius:12px;">
-    <a href="https://amzn.to/4i43A7i" target="_blank" style="display:inline-block; background:#000; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top: 10px;">Shop Now</a>
-  </div>
-
-  <div style="border:1px solid #ddd; border-radius:16px; padding:16px; text-align:center; font-family:sans-serif; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <img src="https://m.media-amazon.com/images/I/51-pLhPHoBL._SY741_.jpg" alt="Product 3" style="width:100%; border-radius:12px;">
-    <a href="https://amzn.to/3R5uFMt" target="_blank" style="display:inline-block; background:#000; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top: 10px;">Shop Now</a>
-  </div>
-
-  <div style="border:1px solid #ddd; border-radius:16px; padding:16px; text-align:center; font-family:sans-serif; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <img src="https://m.media-amazon.com/images/I/61Cn-GwBmYL._SY741_.jpg" alt="Product 4" style="width:100%; border-radius:12px;">
-    <a href="https://amzn.to/4ckejZU" target="_blank" style="display:inline-block; background:#000; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top: 10px;">Shop Now</a>
-  </div>
-</div>
-
