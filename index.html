@@ -1,177 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AROVA - Shop the Latest Fashion</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AROVA: Echoes of the Forgotten</title>
   <style>
     body {
-      font-family: sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background-color: #000;
+      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
       color: white;
     }
-    header h1 {
-      font-size: 50px;
-      font-weight: bold;
-      margin: 0;
-    }
-    nav {
-      text-align: center;
-      background-color: #333;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 18px;
-    }
-    nav a:hover {
-      background-color: #575757;
-    }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-content {
-      display: none;
+    #introText {
       position: absolute;
-      background-color: #333;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .dropdown-content a {
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #575757;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 20px;
-    }
-    .product-card {
-      border: 1px solid #ddd;
-      border-radius: 16px;
-      padding: 16px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-      font-family: sans-serif;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      font-size: 1.5rem;
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 2;
     }
-    .product-card img {
+    #message {
+      position: absolute;
+      bottom: 30px;
       width: 100%;
-      border-radius: 12px;
-      margin-bottom: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #aaa;
     }
-    .product-card a {
-      display: inline-block;
-      background: #000;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: auto;
-    }
-    @media screen and (max-width: 1200px) {
-      .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    @media screen and (max-width: 800px) {
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media screen and (max-width: 500px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
+    canvas {
+      display: block;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>AROVA</h1>
-  </header>
-
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="dropdown">
-      <a href="#">Men</a>
-      <div class="dropdown-content">
-        <a href="#">Shoes</a>
-        <a href="#">Clothing</a>
-        <a href="#">Accessories</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <a href="#">Women</a>
-      <div class="dropdown-content">
-        <a href="#">Shoes</a>
-        <a href="#">Clothing</a>
-        <a href="#">Accessories</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <a href="#">Kids</a>
-      <div class="dropdown-content">
-        <a href="#">Shoes</a>
-        <a href="#">Clothing</a>
-        <a href="#">Accessories</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Products Section: Men's Clothing -->
-  <h2 style="text-align:center; padding: 20px; font-size: 30px;">Men's Clothing</h2>
-  <div class="product-grid">
-    <!-- Product 1 -->
-    <div class="product-card">
-      <img src="https://m.media-amazon.com/images/I/71axOQHBUhL._SY741_.jpg" alt="Product 1">
-      <a href="https://amzn.to/3YnnuTD" target="_blank">Shop Now</a>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="product-card">
-      <img src="https://m.media-amazon.com/images/I/51cNMNimNGL._SY741_.jpg" alt="Product 2">
-      <a href="https://amzn.to/4i43A7i" target="_blank">Shop Now</a>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="product-card">
-      <img src="https://m.media-amazon.com/images/I/51-pLhPHoBL._SY741_.jpg" alt="Product 3">
-      <a href="https://amzn.to/3R5uFMt" target="_blank">Shop Now</a>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="product-card">
-      <img src="https://m.media-amazon.com/images/I/61Cn-GwBmYL._SY741_.jpg" alt="Product 4">
-      <a href="https://amzn.to/4ckejZU" target="_blank">Shop Now</a>
-    </div>
+  <div id="introText">
+    <h1>AROVA: Echoes of the Forgotten</h1>
+    <p>You are Vishu. Your sister disappeared. The mansion holds the truth.</p>
+    <button onclick="startGame()">Enter the Mansion</button>
   </div>
+  <div id="message"></div>
 
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/examples/js/controls/PointerLockControls.js"></script>
+  <script>
+    let scene, camera, renderer, controls, currentAct = 1, timer = 0;
+    const messageBox = document.getElementById("message");
+
+    function startGame() {
+      document.getElementById("introText").style.display = "none";
+      init();
+    }
+
+    function init() {
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x000000);
+
+      camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      camera.position.set(0, 1.6, 0);
+
+      renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      const flashlight = new THREE.SpotLight(0xffffff, 2, 100, Math.PI / 6);
+      flashlight.position.set(0, 0, 0);
+      flashlight.target.position.set(0, 0, -1);
+      camera.add(flashlight);
+      camera.add(flashlight.target);
+      scene.add(camera);
+
+      const floorGeometry = new THREE.PlaneGeometry(100, 100);
+      const floorMaterial = new THREE.MeshStandardMaterial({ color: 0x111111 });
+      const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+      floor.rotation.x = -Math.PI / 2;
+      floor.receiveShadow = true;
+      scene.add(floor);
+
+      const wallMaterial = new THREE.MeshStandardMaterial({ color: 0x222222 });
+      for (let i = 0; i < 4; i++) {
+        const wall = new THREE.Mesh(
+          new THREE.BoxGeometry(50, 10, 1),
+          wallMaterial
+        );
+        switch (i) {
+          case 0:
+            wall.position.set(0, 5, -25);
+            break;
+          case 1:
+            wall.position.set(0, 5, 25);
+            break;
+          case 2:
+            wall.position.set(-25, 5, 0);
+            wall.rotation.y = Math.PI / 2;
+            break;
+          case 3:
+            wall.position.set(25, 5, 0);
+            wall.rotation.y = Math.PI / 2;
+            break;
+        }
+        scene.add(wall);
+      }
+
+      const ambientLight = new THREE.AmbientLight(0x404040);
+      scene.add(ambientLight);
+
+      controls = new THREE.PointerLockControls(camera, document.body);
+      document.addEventListener("click", () => controls.lock());
+
+      const direction = new THREE.Vector3();
+      const keysPressed = {};
+      document.addEventListener("keydown", e => keysPressed[e.key.toLowerCase()] = true);
+      document.addEventListener("keyup", e => keysPressed[e.key.toLowerCase()] = false);
+
+      function movePlayer() {
+        direction.z = Number(keysPressed["w"]) - Number(keysPressed["s"]);
+        direction.x = Number(keysPressed["d"]) - Number(keysPressed["a"]);
+        direction.normalize();
+        if (controls.isLocked) {
+          controls.moveRight(direction.x * 0.1);
+          controls.moveForward(direction.z * 0.1);
+        }
+      }
+
+      function updateAct() {
+        timer++;
+        if (timer === 600) {
+          currentAct = 2;
+          messageBox.innerText = "Act 2: Investigation Begins... Explore the mansion.";
+        } else if (timer === 1200) {
+          currentAct = 3;
+          messageBox.innerText = "Act 3: Descent... Something watches you in the dark.";
+        } else if (timer === 1800) {
+          currentAct = 4;
+          messageBox.innerText = "Act 4: Escape the Echoes... Run!";
+        }
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        movePlayer();
+        updateAct();
+        renderer.render(scene, camera);
+      }
+
+      animate();
+    }
+  </script>
 </body>
 </html>
